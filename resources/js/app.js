@@ -1,15 +1,18 @@
 //import Echo from 'laravel-echo';
 import './bootstrap';
 
-console.log(Echo)
 
-Echo.channel('notifications')
+//console.log(Echo)
+
+
+Echo.private('notifications')
+//Echo.channel('notifications')
 .listen('UserSessionChanged', (e) => {
-    console.log(e);
+    //console.log(e);
     const notificationElement = document.getElementById('notification');
 
     notificationElement.innerText = e.message;
-    
+
     notificationElement.classList.remove('invisible');
     notificationElement.classList.remove('alert-success');
     notificationElement.classList.remove('alert-danger');
